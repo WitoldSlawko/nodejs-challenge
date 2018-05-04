@@ -1,62 +1,55 @@
-Na podstawie istniejącego kodu napisz implementację metod serwisowych
-klasy `UsersService` (`/app/services/users-service.js`).
+Basing on existing code, please to implement service methods for `UserService` (`/app/services/users-service.js`).
 
-## Lista kroków
+## Steps
 
-1. Sklonuj repozytorium `https://github.com/funkydev/nodejs-challenge`.
-2. Zapoznaj się z plikiem README.md, w którym opisane są wymagane składniki środowiska uruchomieniowego.
-3. W przypadku braku któregokolwiek ze składników - zainstaluj go.
-4. Aby uruchomić serwer bazy danych wpisz w terminal polecenie `docker-compose up`
-5. Uruchom aplikację ze zmienną środowiskową `DB_CONNECTION_STRING`. W przypadku, gdy korzystasz z wspomnianej bazy w punkcie 4. powinna ona mieć wartość `postgres://api@localhost/api`
-6. Zapoznaj sie z istniejącym kodem i wykonaj zadanie.
+1. Clone this repository (`https://github.com/funkydev/nodejs-challenge`).
+2. Read README.md file, which containst instruction how to run the application.
+3. To run database server, you can use prepared docker-compose file, by executing `docker-compose up` command in terminal. 
+4. Run application with `DB_CONNECTION_STRING` environment variable. If you're using prepared docker-compose file it should be `postgres://api@localhost/api`
+5. Read already written code, and complete task described below.
 
-## Wymagania
+## Requirements
 
-Metody powinny zostać napisane na podstawie istniejącego serwisu (PostsService) z analogicznymi metodami.
-
-Zmiany dozwolone są jedynie w pliku `/app/services/users-service.js` oraz `/app/constants/errors/user-errors.js`
-
-Zadbaj o to, aby serwis zwracał odpowiednio doprecyzowane kody błędów.
+Methods should be created based on existing service (PostsService).
+Remember to create correct error codes, which should be return by service.
 
 ### createUser()
 
-Metoda powinna dodać użytkownika do bazy danych, korzystając z sequelize.
+Method which adds a new user to the database (using sequelize library)
 
-Użytkownik przesyła następujące parametry:
-- email - email użytkownika
-- firstName - imię użytkownika
-- lastName - nazwisko użytkownika
-- password - hasło użytkownika (w postaci jawnej)
+API consumes next params:
+- email - user's email
+- firstName - user's first name
+- lastName - user's last name
+- password - user's password (not encrypted)
 
-Walidacja powyższych propert została już zaimplementowana.
-Model bazy danych został opisany w pliku `/app/models/database/user.js`.
+Validation of these properties has been implemented.
+The database user model has been described in file: `/app/models/database/user.js`.
 
 
 ### getUsersList()
 
-Metoda powinna pobrać użytkowników z bazy danych, uwzględniając paginację.
+Method should gets existing users from the database. It should include pagination properties.
 
-Użytkownik przesyła następujące parametry:
-- page - numer strony
-- pageSize - ilość elementów na stronie
+API consumes next params:
+- page - page number
+- pageSize - count of elements on page
 
-Walidacja powyższych propert została już zaimplementowana.
-Model bazy danych został opisany w pliku `/app/models/database/user.js`.
+Validation of these properties has been implemented.
+The database user model has been described in file: `/app/models/database/user.js`.
 
 
 ### getSingleUser()
 
-Metoda powinna pobrać użytkownika z bazy danych, uwzględniając jego identyfikator.
+Method should gets the existing user from the database by given identifier.
 
-Użytkownik przesyła następujące parametry:
-- userId - identyfikator użytkownika (uuid)
+API consumes next param:
+- userId - user identifier (in uuid format)
 
-Walidacja powyższych propert została już zaimplementowana.
-Model bazy danych został opisany w pliku `/app/models/database/user.js`.
+Validation of these properties has been implemented.
+The database user model has been described in file: `/app/models/database/user.js`.
 
-## Kontakt
+## Contact
 
-W razie jakichkolwiek pytań możesz kontaktować się z autorem zadania:
-- kacper~at~zaven.co
+If you'll have any question, you can contact with author of the task:
 - https://www.facebook.com/obrzut.kacper
-
