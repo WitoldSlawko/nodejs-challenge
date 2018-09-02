@@ -6,6 +6,7 @@ const Server = require('./app/utilities/server');
 const Database = require('./app/utilities/database');
 const DatabaseConfig = require('./app/config/database');
 const Umzug = require('umzug');
+const googleError = require('./app/utilities/errorring');
 
 const server = async () => {
   try {
@@ -50,6 +51,7 @@ const server = async () => {
     global.DB.Sequelize = Sequelize;
     console.log('Imported database model(s).');
   } catch (error) {
+    googleError(error);
     console.error(error);
   }
 

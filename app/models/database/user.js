@@ -21,5 +21,41 @@ module.exports = function (sequelize, DataTypes) {
     User.hasMany(DB.Post, {foreignKey: 'authorId', as: 'Posts'});
   };
 
+  /**
+   * Create a new post
+   * @param {object} model - model
+   * @param {string} model.email - user email
+   * @param {string} model.firstName - user firstName
+   * @param {string} model.lastName - user lastName
+   * @param {string} model.lastName - user password
+   * @return {DB.User} - created user
+   */
+  User.createUser = async function (model) {
+    return User.create({
+      email: model.email,
+      firstName: model.firstName,
+      lastName: model.lastName,
+      password: model.password
+    });
+  };
+
+   /**
+   * Get paginated user list
+   * @param {number} offset - offset
+   * @param {number} limit - limit
+   * @return {Promise<Array<DB.User>>} - list of users
+   */
+  User.getUsersList = async function (offset, limit) {
+    return User.findAll({offset, limit});
+  };
+
+  /**
+   * @param {string} id - user id (uuid)
+   * @return {Promise<DB.User|null>} - user
+   */
+  User.findById = async function (id) {
+    return User.findOne({id});
+  };
+
   return User;
 };

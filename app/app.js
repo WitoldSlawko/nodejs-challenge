@@ -27,7 +27,7 @@ app.use(BodyParser.json());
 app.use(BodyParser.urlencoded({extended: true}));
 app.use(Lusca.xframe('SAMEORIGIN'));
 app.use(Lusca.xssProtection(true));
-app.use(Lusca.xssProtection(true));
+app.use(Lusca.xssProtection(true)); // why repeated twice ??
 
 // routes
 app.use(router);

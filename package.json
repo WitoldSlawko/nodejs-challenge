@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
-    "start-dev": "docker-compose up -d && npm i && export DB_CONNECTION_STRING=\"postgres://api@localhost/api\" && node index.js"
+    "start-dev": "docker-compose up -d && npm i && export DB_CONNECTION_STRING=\"postgres://api@localhost/api\" && node index.js",
+    "createnewuser": "node ./app/utilities/requesting/user/createSingleUser.js"
   },
   "keywords": [
     "nodejs",
@@ -21,8 +22,12 @@
     "cors": "^2.8.4",
     "express": "^4.16.2",
     "express-validator": "^4.3.0",
+    "faker": "^4.1.0",
     "lusca": "^1.5.2",
+    "opn": "^5.3.0",
     "pg": "^7.4.1",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.2",
     "sequelize": "^4.31.2",
     "umzug": "^2.1.0"
   },

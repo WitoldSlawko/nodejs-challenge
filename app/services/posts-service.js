@@ -2,6 +2,7 @@
 const ServiceResult = require('../models/service-results/service-results');
 const PostErrors = require('../constants/errors/post-errors');
 const Pagination = require('../utilities/pagination/pagination');
+const googleError = require('../utilities/errorring');
 
 class PostsService {
   /**
@@ -20,6 +21,7 @@ class PostsService {
       return new ServiceResult(null, post);
     } catch (error) {
       console.error(error);
+      googleError(error);
       return new ServiceResult(PostErrors.UNEXPECTED_ERROR);
     }
   }
@@ -37,6 +39,7 @@ class PostsService {
       return new ServiceResult(null, posts);
     } catch (error) {
       console.error(error);
+      googleError(error);
       return new ServiceResult(PostErrors.UNEXPECTED_ERROR);
     }
   }
@@ -57,6 +60,7 @@ class PostsService {
       return new ServiceResult(null, post);
     } catch (error) {
       console.error(error);
+      googleError(error);
       return new ServiceResult(PostErrors.UNEXPECTED_ERROR);
     }
   }
