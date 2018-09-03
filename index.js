@@ -6,7 +6,7 @@ const Server = require('./app/utilities/server');
 const Database = require('./app/utilities/database');
 const DatabaseConfig = require('./app/config/database');
 const Umzug = require('umzug');
-const googleError = require('./app/utilities/errorring');
+const googleError = require('./app/utilities/erroring');
 
 const server = async () => {
   try {

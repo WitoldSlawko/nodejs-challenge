@@ -35,7 +35,7 @@ module.exports = function (sequelize, DataTypes) {
       email: model.email,
       firstName: model.firstName,
       lastName: model.lastName,
-      password: model.password
+      passwordHash: model.password
     });
   };
 

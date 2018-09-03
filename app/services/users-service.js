@@ -2,7 +2,7 @@
 const ServiceResult = require('../models/service-results/service-results');
 const UsersErrors = require('../constants/errors/user-errors');
 const Pagination = require('../utilities/pagination/pagination');
-const googleError = require('../utilities/errorring');
+const googleError = require('../utilities/erroring');
 
 class UsersService {
   /**
